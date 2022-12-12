@@ -21,6 +21,11 @@ const createAccountCommand = {
             type: 'string',
             required: true
         })
+        .option('keyType', {
+            desc: 'The type of key you want for the account (Ed25519, Falcon512)',
+            type: 'string',
+            required: false
+        })
         .option('publicKey', {
             desc: 'Public key to initialize the account with',
             type: 'string',
@@ -108,6 +113,23 @@ async function createAccount(options) {
     let keyFilePath;
     if (options.publicKey) {
         publicKey = options.publicKey;
+    } else if (options.keyType) {
+        switch (options.keyType.trim().toUpperCase()) {
+            case 'ED25519': {
+                keyPair = await KeyPair.fromRandom('ed25519');
+                publicKey = keyPair.getPublicKey();
+                break;
+            }
+            case 'FALCON512': {
+                keyPair = await KeyPair.fromRandom('falcon512');
+                publicKey = keyPair.getPublicKey();
+                break;
+            }
+            default: {
+                console.log(options.keyType.trim().toUpperCase());
+                throw new Error(`Unknown key type : ${options.keyType}`);
+            }
+        }
     } else {
         keyPair = await KeyPair.fromRandom('ed25519');
         publicKey = keyPair.getPublicKey();
