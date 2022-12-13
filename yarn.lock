@@ -1968,7 +1968,8 @@ crypt@0.0.2:
 
 "crypto_falcon_js@github:Post-Quantum-Team/Post-Quantum-Near-Falconjs":
   version "1.0.0"
-  resolved "git+ssh://git@github.com/Post-Quantum-Team/Post-Quantum-Near-Falconjs.git#c588f959b25f8307a40d185fa024c91ec7c184c7"
+  resolved "git+ssh://git@github.com/Post-Quantum-Team/Post-Quantum-Near-Falconjs.git"
+  integrity sha512-2mra9tzmaRjc7lwnVgO/XBDzRapuKtYxjMHkpvgzLnyNHfSt/mYa2mM3m+iSl7hgKsYW4d271+Kiy8nmGrb/GA==
   dependencies:
     tweetnacl "^1.0.1"
 
@@ -4505,7 +4506,8 @@ ncp@^2.0.0:
 
 "near-api-js@github:Post-Quantum-Team/Post-Quantum-near-api-js":
   version "0.45.1"
-  resolved "git+ssh://git@github.com/Post-Quantum-Team/Post-Quantum-near-api-js.git#8aaee232f0d69b13348cdad90b7cbe5ab6a4c94f"
+  resolved "git+ssh://git@github.com/Post-Quantum-Team/Post-Quantum-near-api-js.git"
+  integrity sha512-LCC3KZ7YlTAVnBehNbLKY/O2rfcxJp6xi+PzgplC/J95LnEMXkppyWV8ozqULOffTcD/osGJqHtjwB4KxCJkQQ==
   dependencies:
     bn.js "5.2.0"
     borsh "^0.7.0"
